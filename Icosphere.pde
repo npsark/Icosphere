@@ -80,7 +80,7 @@ void reset() {
   offx = random(3);
   offy = random(3);
   offz = random(3);
-  println(offx, offy, offz);
+  //println(offx, offy, offz);
 }
 
 
@@ -157,20 +157,22 @@ void refine() {
 
 void mouseClicked() {
   refine();
-  println(verts.size());
+  println("Verts: " + verts.size());
 }
 
 void keyReleased() {
   if ( key == 's') {
+    print("saving...");
     saveMeshObj();
+    println("done.");
   } else if ( key == 'r' ) {
     reset();
-  }else if(key == 'n'){
+  }/*else if(key == 'n'){
     offx = random(100);
     offy = random(100);
     offz = random(100);
     updateVerts();
-  }else if (key == 't'){
+  }*/else if (key == 't'){
     str = !str;
   }
 }
@@ -180,9 +182,7 @@ void keyReleased() {
 
 void draw() {
   background(255);
-  //lights();
-
-
+  
   if(str){
     noStroke();
   }else{
@@ -190,7 +190,6 @@ void draw() {
   }
 
   fill(255, 0, 0);
-
   //updateVerts();
   beginShape(TRIANGLE);
   drawTris();
@@ -199,8 +198,6 @@ void draw() {
   
 
   camera1.feed();
-  
-  
   //saveFrame("frames/#####.tif");
 }
 
@@ -234,7 +231,6 @@ void saveMeshObj() {
     PVector v = (PVector)verts.get(i);
     fileObj.println("v " + v.x + " " + v.y + " " + v.z);
   }
-  println();
   for (int i=0; i<tris.size (); i++) {
     PVector t = (PVector)tris.get(i);
     fileObj.println("f " + (t.x+1) + " " + (t.y+1) + " " + (t.z+1));
