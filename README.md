@@ -2,7 +2,7 @@
 
 Generates complex shapes based of icospheres. Each vertex is positioned based an a perlin noise variant.
 
-[![IMAGE ALT TEXT HERE](https://i.vimeocdn.com/video/519713835_640.webp)](https://vimeo.com/128541575)
+[![Icosphere vodeo](https://i.vimeocdn.com/video/519713835_640.webp)](https://vimeo.com/128541575)
 
 How To Run:
 * Open Icosphere.pde in Processing. Be sure to have the OCD:Obsessive Camera Direcion library installed. 
